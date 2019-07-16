@@ -4,18 +4,21 @@ import { Http } from '@angular/http';
 import { from } from 'rxjs';
 import 'rxjs/Rx';
 import { ingrediant } from './ingrediant.model';
+import { AuthService } from './../auth/auth.service';
 @Injectable({
   providedIn: 'root'
 })
 export class StoragedataService {
 
-  constructor(private http: Http, private recipeservice: Recipeservice) { }
+  constructor(private http: Http, private recipeservice: Recipeservice, private authservice: AuthService) { }
 
 storagedata(){
-  return this.http.put('https://recipebook-b80a7.firebaseio.com/recipe.json', this.recipeservice.getrecipe())
+  const token = this.authservice.gettokens();
+  return this.http.put('https://recipebook-b80a7.firebaseio.com/recipe.json?auth=' + token, this.recipeservice.getrecipe())
 }  
 fetchdata(){
-  this.http.get('https://recipebook-b80a7.firebaseio.com/recipe.json')
+  const token = this.authservice.gettokens();
+  this.http.get('https://recipebook-b80a7.firebaseio.com/recipe.json?auth=' + token)
    .map(response =>{
     const recipes = response.json();
      for (let recipe of recipes){

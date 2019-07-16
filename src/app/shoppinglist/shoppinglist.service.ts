@@ -12,10 +12,6 @@ export class ShoppingListService{
     changeIngredian = new Subject<ingrediant[]>(); 
     editIngrediant = new Subject(); 
 
-
-
- 
-
     getShoppinglist(){
         return this.ingrediants.slice();
     }  

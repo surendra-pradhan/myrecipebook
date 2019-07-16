@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
-import { StoragedataService } from './../shared/storagedata.service';
+import { StoragedataService } from '../../shared/storagedata.service';
+import { AuthService } from '../../auth/auth.service';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { StoragedataService } from './../shared/storagedata.service';
 })
 export class HeaderComponent{
 
-  constructor(private datastorageservice: StoragedataService) { }
+  constructor(private datastorageservice: StoragedataService, private authservice: AuthService) { }
   onstoragedata(){
     this.datastorageservice.storagedata()
     .subscribe(res =>{
@@ -18,5 +19,8 @@ export class HeaderComponent{
   }
   onfetchdata(){
     this.datastorageservice.fetchdata();
+  }
+  logout(){
+    this.authservice.signout();
   }
 }

@@ -48,6 +48,5 @@ index:number;
       this.editmode = false;
       this.formvalue.reset();
     }
-  
   }
 }
