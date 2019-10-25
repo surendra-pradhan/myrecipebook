@@ -16,8 +16,8 @@ import { coreModule } from './core/core.module';
     AppComponent,
   ],
   imports: [
-    BrowserModule ,
-    HttpModule ,
+    BrowserModule,
+    HttpModule,
     sharedModules,
     shoppinglistmodule,
     authmodule,

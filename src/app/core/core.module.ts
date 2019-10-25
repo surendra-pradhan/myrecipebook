@@ -14,13 +14,13 @@ import { sharedModules } from '../shared/shared.module';
     ],
     imports:[
         ApproutingModule,
-        sharedModules,  
+        sharedModules,
     ],
     providers:[
         ShoppingListService,
         Recipeservice,
         StoragedataService,
-        AuthService,   
+        AuthService,
     ],
     exports:[ApproutingModule,
     HeaderComponent]

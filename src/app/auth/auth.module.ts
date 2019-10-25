@@ -11,7 +11,6 @@ import { authroutingModule } from './authroting.module';
     SignupComponent
     ],
     imports:[
-        
     authroutingModule,
     FormsModule]
 })

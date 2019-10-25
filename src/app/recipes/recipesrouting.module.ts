@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 
 const reciperouting: Routes = [
 
-    {path: '', component: RecipesComponent, children:[
+    {path:'', component: RecipesComponent, children:[
         {path:'', component: RecipeStartComponent},
         {path: 'new', component: RecipeEditComponent, canActivate:[AuthgaurdService]},
         {path:':id', component: RecipeDetailsComponent},

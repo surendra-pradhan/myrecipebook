@@ -8,9 +8,9 @@ export class ShoppingListService{
    private ingrediants: ingrediant[] = [
         new ingrediant('apple', 10),
         new ingrediant('Tomato', 5)
-      ]
-    changeIngredian = new Subject<ingrediant[]>(); 
-    editIngrediant = new Subject(); 
+      ];
+    changeIngredian = new Subject<ingrediant[]>();
+    editIngrediant = new Subject();
 
     getShoppinglist(){
         return this.ingrediants.slice();
@@ -25,7 +25,6 @@ export class ShoppingListService{
     }
     editshoppinlist(index){
         return this.ingrediants[index];
-        
 }
     updateshoppinglist(index, newingredian){
         this.ingrediants[index] = newingredian;

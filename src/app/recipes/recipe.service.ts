@@ -37,7 +37,6 @@ constructor(private slservice: ShoppingListService){}
       addrecipe(newrecipe){
         this.recipe.push(newrecipe);
         return this.changerecipe.next(this.recipe.slice())
-           
       }
 
       updaterecipe(index, newrecipe){
